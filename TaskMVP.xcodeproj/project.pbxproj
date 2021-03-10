@@ -19,6 +19,8 @@
 		B6BAEF6825F8D9D8006E7088 /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF5E25F8D9D8006E7088 /* GithubModel.swift */; };
 		B6BAEF6925F8D9D8006E7088 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF6025F8D9D8006E7088 /* GithubAPI.swift */; };
 		B6BAEF6A25F8D9D8006E7088 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF6125F8D9D8006E7088 /* Router.swift */; };
+		B6BAEF7325F9204F006E7088 /* MVPSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF7225F9204F006E7088 /* MVPSearchPresenter.swift */; };
+		B6BAEF7825F92254006E7088 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF7725F92254006E7088 /* WebPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B6BAEF5E25F8D9D8006E7088 /* GithubModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
 		B6BAEF6025F8D9D8006E7088 /* GithubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		B6BAEF6125F8D9D8006E7088 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B6BAEF7225F9204F006E7088 /* MVPSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSearchPresenter.swift; sourceTree = "<group>"; };
+		B6BAEF7725F92254006E7088 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		B6BAEF5225F8D9D8006E7088 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				B6BAEF7625F9224A006E7088 /* Presenter */,
 				B6BAEF5325F8D9D8006E7088 /* Controller */,
 			);
 			path = Web;
@@ -100,6 +105,7 @@
 		B6BAEF5625F8D9D8006E7088 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				B6BAEF7125F92044006E7088 /* Presenter */,
 				B6BAEF5725F8D9D8006E7088 /* Controller */,
 				B6BAEF5A25F8D9D8006E7088 /* View */,
 			);
@@ -139,6 +145,22 @@
 				B6BAEF6125F8D9D8006E7088 /* Router.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		B6BAEF7125F92044006E7088 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAEF7225F9204F006E7088 /* MVPSearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B6BAEF7625F9224A006E7088 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAEF7725F92254006E7088 /* WebPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +239,9 @@
 				B6BAEF6925F8D9D8006E7088 /* GithubAPI.swift in Sources */,
 				B6BAEF6825F8D9D8006E7088 /* GithubModel.swift in Sources */,
 				B6BAEF6A25F8D9D8006E7088 /* Router.swift in Sources */,
+				B6BAEF7325F9204F006E7088 /* MVPSearchPresenter.swift in Sources */,
 				B6BAEF3C25F8D964006E7088 /* AppDelegate.swift in Sources */,
+				B6BAEF7825F92254006E7088 /* WebPresenter.swift in Sources */,
 				B6BAEF6725F8D9D8006E7088 /* MVPTableViewCell.swift in Sources */,
 				B6BAEF6325F8D9D8006E7088 /* WebViewController.swift in Sources */,
 			);

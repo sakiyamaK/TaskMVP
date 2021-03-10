@@ -8,15 +8,19 @@
 import Foundation
 
 /*
- MVC構成用のUtilityです
- コンポーネントが増えてくるアーキテクチャでは基本Protocolで連携して疎結合にしましょう
+ 模範解答
  */
 
 enum GithubError: Error {
   case error
 }
 
-final class GithubAPI {
+// モジュール同士を疎結合にするためprotocolを用意する
+protocol GithubAPIProtocol {
+  func get(searchWord: String, completion: ((Result<[GithubModel], GithubError>) -> Void)?)
+}
+
+final class GithubAPI: GithubAPIProtocol {
   static let shared = GithubAPI()
 
   private init() {}

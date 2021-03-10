@@ -9,32 +9,30 @@ import UIKit
 import WebKit
 
 /*
- MVC構成になっています、MVP構成に変えてください
-
- Viewから何かを渡す、Viewが何かを受け取る　以外のことを書かない
- if, guard, forといった制御を入れない
- Presenter以外のクラスを呼ばない
- githubModelといった変化するパラメータを持たない(状態を持たない)
+ 模範解答
  */
-
 final class WebViewController: UIViewController {
+
+  private var presenter: WebPresenterInput!
 
   @IBOutlet private weak var webView: WKWebView!
 
-  private var githubModel: GithubModel?
-
-  func configure(githubModel: GithubModel) {
-    self.githubModel = githubModel
+  func inject(presenter: WebPresenterInput) {
+    self.presenter = presenter
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    //画面の読み込みが終わったことをpresenterへ伝える
+    //このあと何をするかはVCは知らなくていい
+    presenter.viewDidLoaded()
+  }
+}
 
-    guard
-      let githubModel = githubModel,
-      let url = URL(string: githubModel.urlStr) else {
-      return
-    }
-    webView.load(URLRequest(url: url))
+extension WebViewController: WebPresenterOutput {
+  //presenterからloadをしろ通知が来た時の処理
+  //何があった時にこの通知がきたかVCは知らなくていい
+  func load(request: URLRequest) {
+    self.webView.load(request)
   }
 }
