@@ -15,7 +15,7 @@ import UIKit
  Presenter以外のクラスを呼ばない
  itemsといった変化するパラメータを持たない(状態を持たない)
 */
-final class MVPSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class MVPSearchViewController: UIViewController {
 
   @IBOutlet private weak var searchTextField: UITextField!
   @IBOutlet private weak var searchButton: UIButton! {
@@ -60,12 +60,16 @@ final class MVPSearchViewController: UIViewController, UITableViewDelegate, UITa
       }
     }
   }
+}
 
+extension MVPSearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     Router.shared.showWeb(from: self, githubModel: items[indexPath.item])
   }
+}
 
+extension MVPSearchViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     items.count
   }
