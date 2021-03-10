@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wOa-SI-twv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="ctg-4H-50b">
+            <objects>
+                <viewController id="wOa-SI-twv" customClass="MVPSearchViewController" customModule="TaskMVP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UiU-xH-lu7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="N8i-wn-f4u">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-BC-pjy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tlf-vo-UIj">
+                                                <rect key="frame" x="8" y="8" width="398" height="32"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggj-PK-uPZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikR-3R-I1J">
+                                                        <rect key="frame" x="358" y="0.0" width="40" height="32"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Tlf-vo-UIj" firstAttribute="top" secondItem="7Rp-BC-pjy" secondAttribute="top" constant="8" id="Dbu-uh-mw1"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tlf-vo-UIj" secondAttribute="bottom" constant="8" id="m3j-3V-0JI"/>
+                                            <constraint firstItem="Tlf-vo-UIj" firstAttribute="leading" secondItem="7Rp-BC-pjy" secondAttribute="leading" constant="8" id="mdG-UR-pon"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tlf-vo-UIj" secondAttribute="trailing" constant="8" id="rZZ-aD-J9b"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-DR-xks">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="796"/>
+                                        <subviews>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LIG-bE-0rG">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                                            </activityIndicatorView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tDu-SO-x7Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="separatorColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="tDu-SO-x7Q" firstAttribute="top" secondItem="QhE-DR-xks" secondAttribute="top" id="Da9-ZY-m1u"/>
+                                            <constraint firstAttribute="bottom" secondItem="LIG-bE-0rG" secondAttribute="bottom" id="S4A-1b-yTR"/>
+                                            <constraint firstItem="tDu-SO-x7Q" firstAttribute="leading" secondItem="QhE-DR-xks" secondAttribute="leading" id="Ve0-8z-6yS"/>
+                                            <constraint firstItem="LIG-bE-0rG" firstAttribute="leading" secondItem="QhE-DR-xks" secondAttribute="leading" id="XOL-Dt-NTz"/>
+                                            <constraint firstItem="LIG-bE-0rG" firstAttribute="top" secondItem="QhE-DR-xks" secondAttribute="top" id="YqT-Pz-cbT"/>
+                                            <constraint firstAttribute="trailing" secondItem="LIG-bE-0rG" secondAttribute="trailing" id="beO-YL-Rjx"/>
+                                            <constraint firstAttribute="bottom" secondItem="tDu-SO-x7Q" secondAttribute="bottom" id="fNe-jL-Rqg"/>
+                                            <constraint firstAttribute="trailing" secondItem="tDu-SO-x7Q" secondAttribute="trailing" id="u2j-Hd-Ini"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Djs-L7-zNm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N8i-wn-f4u" firstAttribute="top" secondItem="Djs-L7-zNm" secondAttribute="top" id="CZD-zR-PaU"/>
+                            <constraint firstItem="Djs-L7-zNm" firstAttribute="trailing" secondItem="N8i-wn-f4u" secondAttribute="trailing" id="NfM-U6-ctv"/>
+                            <constraint firstAttribute="bottom" secondItem="N8i-wn-f4u" secondAttribute="bottom" id="Zzj-lk-b6t"/>
+                            <constraint firstItem="N8i-wn-f4u" firstAttribute="leading" secondItem="UiU-xH-lu7" secondAttribute="leading" id="t2f-0a-UwC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicator" destination="LIG-bE-0rG" id="BVQ-Tc-tDY"/>
+                        <outlet property="searchButton" destination="ikR-3R-I1J" id="KNW-Rp-iUj"/>
+                        <outlet property="searchTextField" destination="Ggj-PK-uPZ" id="Vcf-UW-lOR"/>
+                        <outlet property="tableView" destination="tDu-SO-x7Q" id="ves-sn-tbD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9V-zt-kb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13" y="179"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
